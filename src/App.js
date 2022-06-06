@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 // Local API
 import people from "./data";
-// Components
-import Person from "./components/Person";
 // Icons
 import { FaQuoteRight } from "react-icons/fa";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
@@ -26,7 +24,7 @@ function App() {
   useEffect(() => {
     let slider = setInterval(() => {
       setIndex(index + 1);
-    }, 5000);
+    }, 4000);
     return () => clearInterval(slider);
   }, [index]);
 
@@ -40,7 +38,6 @@ function App() {
       <div className="section-center">
         {persons.map((person, personIndex) => {
           const { name, title, quote, image, id } = person;
-
           // more stuf coming
           let position = "nextSlide";
           if (personIndex === index) {
